@@ -7,11 +7,11 @@ import { StackHeaderProps } from '@react-navigation/stack';
 import HeaderStyles from '../styles/components/HeaderStyles';
 
 interface HeaderProps extends StackHeaderProps {
-  showBack?: boolean;
+  showCancel?: boolean;
   title: string;
 }
 
-export default function Header({ showBack = true, title, navigation }: HeaderProps) {
+export default function Header({ showCancel = true, title, navigation }: HeaderProps) {
   return (
     <View style={HeaderStyles.container}>
       <BorderlessButton onPress={navigation.goBack}>
@@ -20,7 +20,7 @@ export default function Header({ showBack = true, title, navigation }: HeaderPro
 
       <Text style={HeaderStyles.title}>{title}</Text>
 
-      {showBack?(
+      {showCancel?(
         <BorderlessButton onPress={navigation.goBack}>
           <Feather name="x" size={24} color="#FF669D"/>
         </BorderlessButton>      
