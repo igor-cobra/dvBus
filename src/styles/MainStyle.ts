@@ -23,6 +23,36 @@ const MainStyle = StyleSheet.create({
     textAlignVertical: 'top',
     marginHorizontal: 24,
   },
+  footer: {
+    position: 'absolute',
+    left: 24,
+    right: 24,
+    bottom: 32,
+
+    backgroundColor: '#FFF',
+    borderRadius: 20,
+    height: 56,
+    paddingLeft: 24,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    elevation: 3,
+  },
+  footerText: {
+    fontFamily: 'Nunito_700Bold',
+    color: '#8fa7b3',
+  },
+  create: {
+    width: 56,
+    height: 56,
+    backgroundColor: '#15C3D6',
+    borderRadius: 20,
+
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
 
 export default MainStyle;

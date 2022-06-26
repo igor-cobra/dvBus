@@ -1,30 +1,29 @@
 import { StyleSheet } from "react-native";
 
-const LoginStyles = StyleSheet.create({
-  imageContainer: {
-    alignItems: "center",
-    paddingBottom: 25,
-    paddingTop: 100,
-  },
-  image: {
-    height: 192,
-    width: 192,
-    paddingBottom: 10,
-  },
-  loginButton: {
+const CreateAccountStyles = StyleSheet.create({
+  createAccountButton: {
     backgroundColor: '#15c3d6',
     borderRadius: 20,
+    position: 'absolute',
+    left: 24,
+    right: 24,
+    bottom: 93,
+
+    height: 56,
+    paddingLeft: 24,
+
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 56,
+
+    elevation: 3,
     marginTop: 70,
   },
-  loginButtonText: {
+  createAccountButtonText: {
     fontFamily: 'Nunito_800ExtraBold',
     fontSize: 16,
     color: '#FFF',
   }
 });
 
-export default LoginStyles;
+export default CreateAccountStyles;
