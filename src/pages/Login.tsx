@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Image, Text, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from "@react-navigation/native";
+import { Feather } from '@expo/vector-icons';
 
 import Icons from "../resources/Icons"
 
@@ -13,6 +14,10 @@ export default function Login() {
 
   function handleNavigateToMapNavigation() {
     navigation.navigate('MapNavigation');
+  }
+
+  function handleNavigateToCreateAccount() {
+    navigation.navigate('CreateAccount');
   }
 
   return (
@@ -37,8 +42,15 @@ export default function Login() {
       />
 
       <RectButton style={LoginStyle.loginButton} onPress={handleNavigateToMapNavigation}>
-        <Text style={LoginStyle.loginButtonText}>Cadastrar</Text>
+        <Text style={LoginStyle.loginButtonText}>Login</Text>
       </RectButton>
+      
+      <View style={MainStyle.footer}>
+        <Text style={MainStyle.footerText}>Não possui uma conta?</Text>
+        <RectButton style={MainStyle.create} onPress={handleNavigateToCreateAccount}>
+          <Feather name="plus" size={20} color="#FFF" />
+        </RectButton>
+      </View>
     </View>
   )
 }
