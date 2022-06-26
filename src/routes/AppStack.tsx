@@ -4,11 +4,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 const { Navigator, Screen } = createStackNavigator();
 
-import Login from "../pages/Login"
 import Header from '../components/Header';
-
-import MapNavigation from '../pages/MapNavigation'
-import CreateAccount from '../pages/CreateAccount'
+import Login from '../pages/Login';
+import CreateAccount from '../pages/CreateAccount';
+import MapNavigation from '../pages/MapNavigation';
+import BusDetail from '../pages/BusDetail';
 
 export default function routes () {
   return(
@@ -39,6 +39,15 @@ export default function routes () {
           options={{ 
             headerShown: true,
             header: (props) => <Header title="Pontos registrados" showCancel={false} {...props} />,
+          }}
+      />
+
+      <Screen 
+          name="BusDetail" 
+          component={BusDetail}
+          options={{ 
+            headerShown: true,
+            header: (props) => <Header title="Informações detalhadas" showCancel={false} {...props} />,
           }}
       />
       </Navigator>

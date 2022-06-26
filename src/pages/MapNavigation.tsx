@@ -5,15 +5,14 @@ import { RectButton, TextInput } from 'react-native-gesture-handler';
 import { useNavigation } from '@react-navigation/native';
 import MapView, { Marker, Callout, PROVIDER_GOOGLE } from 'react-native-maps';
 
-import MainStyle from "../styles/MainStyle"
-import MapNavigationStyles from "../styles/pages/MapNavigationStyle"
-import mapMarkerImg from '../../assets/mapMarker.png';
+import MainStyle from '../styles/MainStyle'
+import MapNavigationStyles from '../styles/pages/MapNavigationStyle';
 
 export default function MapNavigation() {
   const navigation = useNavigation();
 
   function handleNavigateToLocationDetails() {
-
+    navigation.navigate('BusDetail');
   }
 
   function handleNavigateToCreateLocation() {
@@ -33,7 +32,6 @@ export default function MapNavigation() {
         style={MapNavigationStyles.mapStyle}
       >
         <Marker 
-          icon={mapMarkerImg}
           calloutAnchor={{ x: 2.7, y: 0.8 }}
           coordinate={{ 
             latitude: -25.74887231218309,
