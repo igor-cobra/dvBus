@@ -62,23 +62,6 @@ export default function BusDetail() {
           <Feather name="clock" size={40} color="#2AB5D1" />
           <Text style={[BusDetailStyle.scheduleText, BusDetailStyle.scheduleTextBlue]}>Segunda à Sexta 7h</Text>
         </View>
-
-        <View style={[BusDetailStyle.scheduleItem, BusDetailStyle.scheduleItemBlue]}>
-          <Feather name="clock" size={40} color="#2AB5D1" />
-          <Text style={[BusDetailStyle.scheduleText, BusDetailStyle.scheduleTextBlue]}>Segunda à Sexta 7h30m</Text>
-        </View>
-      </View>
-
-      <View style={BusDetailStyle.scheduleContainer}>
-        <View style={[BusDetailStyle.scheduleItem, BusDetailStyle.scheduleItemBlue]}>
-          <Feather name="clock" size={40} color="#2AB5D1" />
-          <Text style={[BusDetailStyle.scheduleText, BusDetailStyle.scheduleTextBlue]}>Segunda à Sexta 17h40m</Text>
-        </View>
-
-        <View style={[BusDetailStyle.scheduleItem, BusDetailStyle.scheduleItemBlue]}>
-          <Feather name="clock" size={40} color="#2AB5D1" />
-          <Text style={[BusDetailStyle.scheduleText, BusDetailStyle.scheduleTextBlue]}>Segunda à Sexta 18h10m</Text>
-        </View>
       </View>
     </View>
   </ScrollView>

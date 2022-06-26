@@ -59,7 +59,7 @@ const BusDetailStyle = StyleSheet.create({
     justifyContent: 'space-between'
   },
   scheduleItem: {
-    width: '48%',
+    width: '100%',
     padding: 20,
   },
   scheduleItemBlue: {

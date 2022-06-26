@@ -9,6 +9,8 @@ import Login from '../pages/Login';
 import CreateAccount from '../pages/CreateAccount';
 import MapNavigation from '../pages/MapNavigation';
 import BusDetail from '../pages/BusDetail';
+import SelectMapPosition from '../pages/SelectMapPosition';
+import BusData from '../pages/BusData';
 
 export default function routes () {
   return(
@@ -25,30 +27,48 @@ export default function routes () {
       />
 
       <Screen 
-          name="CreateAccount" 
-          component={CreateAccount}
-          options={{ 
-            headerShown: true,
-            header: (props) => <Header title="Criar Conta" showCancel={false} {...props} />,
-          }}
+        name="CreateAccount" 
+        component={CreateAccount}
+        options={{ 
+          headerShown: true,
+          header: (props) => <Header title="Criar Conta" showCancel={false} showBack={true} {...props} />,
+        }}
       />
 
       <Screen 
-          name="MapNavigation" 
-          component={MapNavigation}
-          options={{ 
-            headerShown: true,
-            header: (props) => <Header title="Pontos registrados" showCancel={false} {...props} />,
-          }}
+        name="MapNavigation" 
+        component={MapNavigation}
+        options={{ 
+          headerShown: true,
+          header: (props) => <Header title="Pontos registrados" showCancel={false} showBack={true} {...props} />,
+        }}
       />
 
       <Screen 
-          name="BusDetail" 
-          component={BusDetail}
-          options={{ 
-            headerShown: true,
-            header: (props) => <Header title="Informações detalhadas" showCancel={false} {...props} />,
-          }}
+        name="BusDetail" 
+        component={BusDetail}
+        options={{ 
+          headerShown: true,
+          header: (props) => <Header title="Informações detalhadas" showCancel={false} showBack={true} {...props} />,
+        }}
+      />
+
+      <Screen 
+        name="SelectMapPosition" 
+        component={SelectMapPosition}
+        options={{ 
+          headerShown: true,
+          header: (props) => <Header title="Selecione no mapa" showBack={false} {...props} />,
+        }}
+      />
+
+      <Screen 
+        name="BusData" 
+        component={BusData}
+        options={{ 
+          headerShown: true,
+          header: (props) => <Header title="Selecione no mapa" showBack={false} {...props} />,
+        }}
       />
       </Navigator>
     </NavigationContainer>

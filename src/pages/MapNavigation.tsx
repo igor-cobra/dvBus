@@ -16,7 +16,7 @@ export default function MapNavigation() {
   }
 
   function handleNavigateToCreateLocation() {
-
+    navigation.navigate('SelectMapPosition');
   }
 
   return (
@@ -34,8 +34,8 @@ export default function MapNavigation() {
         <Marker 
           calloutAnchor={{ x: 2.7, y: 0.8 }}
           coordinate={{ 
-            latitude: -25.74887231218309,
-            longitude: -53.05140153393881,
+            latitude: -25.74887232,
+            longitude: -53.05140154,
           }}
         >
           <Callout tooltip={true} onPress={handleNavigateToLocationDetails}>
