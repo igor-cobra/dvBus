@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from "@react-navigation/native";
@@ -10,6 +10,9 @@ import CreateAccountStyle from "../styles/pages/CreateAccountStyle";
 
 export default function Login() {
   const navigation = useNavigation();
+
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
 
   function handleNavigateToMapNavigation() {
     navigation.navigate('MapNavigation');

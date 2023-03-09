@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Image, Text, TextInput } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { useNavigation } from "@react-navigation/native";
 import { Feather } from '@expo/vector-icons';
 
-import Icons from "../resources/Icons"
+import Icons from '../resources/Icons';
+
+import { authUser, findUserData } from '../resources/login';
 
 import MainStyle from "../styles/MainStyle"
 import LoginStyle from "../styles/pages/LoginStyle";
@@ -12,8 +14,16 @@ import LoginStyle from "../styles/pages/LoginStyle";
 export default function Login() {
   const navigation = useNavigation();
 
-  function handleNavigateToMapNavigation() {
-    navigation.navigate('MapNavigation');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  async function handleAuthenticateLogin() {
+    let userUid = await authUser(email, password);
+    let userFound = await findUserData(userUid);
+
+    if (userFound) {
+      navigation.navigate('MapNavigation');
+    }
   }
 
   function handleNavigateToCreateAccount() {
@@ -34,14 +44,19 @@ export default function Login() {
       <Text style={MainStyle.label}>e-mail</Text>
       <TextInput
         style={MainStyle.input}
+        onChangeText={(text) => setEmail(text)}
+        value={email}
       />
 
       <Text style={MainStyle.label}>senha</Text>
       <TextInput
         style={MainStyle.input}
+        secureTextEntry={true}
+        onChangeText={(text) => setPassword(text)}
+        value={password}
       />
 
-      <RectButton style={LoginStyle.loginButton} onPress={handleNavigateToMapNavigation}>
+      <RectButton style={LoginStyle.loginButton} onPress={handleAuthenticateLogin}>
         <Text style={LoginStyle.loginButtonText}>Login</Text>
       </RectButton>
       
